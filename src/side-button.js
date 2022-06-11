@@ -2,10 +2,7 @@
 const $ = require('jquery'),
     _ = require('lodash');
 
-/**
- * Create a script button.
- */
-class ScriptButton {
+global.ScriptButton = class SideButton {
     /**
      * @param {*} options
      * @returns
@@ -112,6 +109,3 @@ class ScriptButton {
         }, textDisabledDuration);
     }
 }
-
-// Set global for scripts.
-global.ScriptButton = ScriptButton;
