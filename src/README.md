@@ -1,25 +1,33 @@
-# Side Button
+# Rate Limited API
 ### General
-A button that appears to the right of all page content and sticks to the top of the screen when scrolled.
+Make as many requests as you want and don't care about getting rate limited.
+
+This script will make the maximum requests per minute to the API. It takes into account the last request it made and determines whether or not it needs to wait before making the next request in order to not get rate limited.
 
 ### Usage
 ```
-const button = new SideButton({ ... });
+const api = new RateLimitedApi('API KEY');
+
+const data = await api({
+    area: 'user',
+    selections: 'basic,personalstats',
+    id: 1
+});
 ```
 
 ### Options
-`root` [jQuery]: The root element to append the button to. This element should be present on page load.
+All options are passed in as one object.
 
-`text` [string]: The default text for the button.
+To see all the options for the API, you can see them [here](https://www.torn.com/api.html).
 
-`textDisabledDuration` [number]: The amount of time in milliseconds that the button is disabled after being clicked.
+`area` [string]: API section you wish to query.
 
-`onClick` [function]: A callback for when the button is clicked.
+`selections` [string]: Which type of stats you wish to get.
 
-`onUpdateText` [function]: A callback for when the text has been changed.
+`id` [number] [optional]: ID for whichever area you are querying.
 
 ### URL
-https://cdn.jsdelivr.net/gh/danielgoodwin97/torn-script-utilities/dist/js/side-button.js
+https://cdn.jsdelivr.net/gh/danielgoodwin97/torn-script-utilities/dist/js/rate-limited-api.js
 
 # Fetch Event
 ### General
@@ -50,3 +58,27 @@ new FetchEvent('endpoint.php', {
 
 ### URL
 https://cdn.jsdelivr.net/gh/danielgoodwin97/torn-script-utilities/dist/js/fetch-event.js
+
+
+# Side Button
+### General
+A button that appears to the right of all page content and sticks to the top of the screen when scrolled.
+
+### Usage
+```
+const button = new SideButton({ ... });
+```
+
+### Options
+`root` [jQuery]: The root element to append the button to. This element should be present on page load.
+
+`text` [string]: The default text for the button.
+
+`textDisabledDuration` [number]: The amount of time in milliseconds that the button is disabled after being clicked.
+
+`onClick` [function]: A callback for when the button is clicked.
+
+`onUpdateText` [function]: A callback for when the text has been changed.
+
+### URL
+https://cdn.jsdelivr.net/gh/danielgoodwin97/torn-script-utilities/dist/js/side-button.js
