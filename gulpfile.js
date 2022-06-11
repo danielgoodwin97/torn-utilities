@@ -1,6 +1,7 @@
 // Packages.
 const gulp = require('gulp'),
     glob = require('glob'),
+    babelify = require('babelify'),
     rename = require('gulp-rename'),
     uglify = require('gulp-uglify'),
     path = require('path'),
@@ -25,6 +26,9 @@ gulp.task('build', finished => {
     // Loop over all files and create bundles.
     const tasks = utilities.map(entry => {
         return browserify({ entries: [ entry ] })
+            .transform(babelify, {
+                presets: ['@babel/preset-env']
+            })
             .bundle()
             .pipe(source(entry))
             .pipe(buffer())
