@@ -25,6 +25,9 @@ Then require that URL in your script like this:
 
 You can find a full list of scripts [here](https://github.com/danielgoodwin97/torn-script-utilities/tree/main/dist/js).
 
+# Documentation
+There is documentation per script in the source file directory's read me. You can view that [here](https://github.com/danielgoodwin97/torn-script-utilities/tree/main/src/).
+
 # Development
 
 All source files are located in `src` and compile into `dist`.

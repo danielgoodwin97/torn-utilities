@@ -2,7 +2,7 @@
 const $ = require('jquery'),
     _ = require('lodash');
 
-global.ScriptButton = class SideButton {
+global.SideButton = class SideButton {
     /**
      * @param {*} options
      * @returns
