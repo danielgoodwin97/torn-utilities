@@ -97,15 +97,15 @@ global.ScriptButton = class SideButton {
         // Update the button text.
         this.button.text(updatedText);
 
+        // Run the text updated callback.
+        onUpdateText();
+
         setTimeout(() => {
             // Set text back to default.
             self.button.text(text);
 
             // Remove disabled attribute.
             self.button.removeAttr('disabled');
-
-            // Run the text updated callback.
-            onUpdateText();
         }, textDisabledDuration);
     }
 }
